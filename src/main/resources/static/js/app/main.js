@@ -9,6 +9,7 @@ var main = {
         var data = {
             title: $('#title').val(),
             artist: $('#artist').val(),
+            type: $('#type').val(),
             link: $('#link').val()
         };
 

@@ -26,7 +26,8 @@ public class Songs extends BaseTimeEntity {
     @Column(length = 500, nullable = false)
     private String artist;
 
-    //private SongType type;
+    @Column(nullable = false)
+    private SongType type;
 
     @Column(nullable = false)
     private String link;
@@ -35,10 +36,10 @@ public class Songs extends BaseTimeEntity {
 
 
     @Builder
-    public Songs(String title, String artist, String link) {
+    public Songs(String title, String artist, String link, SongType type) {
         this.title = title;
         this.artist = artist;
-        //this.type = type;
+        this.type = type;
         this.link = link;
     }
 }

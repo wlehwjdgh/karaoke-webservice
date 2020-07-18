@@ -15,7 +15,7 @@ public class SongsSaveRequestDto {
     private String title;
     private String artist;
     private String link;
-    //private SongType type;
+    private SongType type;
     private int views;
 
     @Builder
@@ -23,14 +23,14 @@ public class SongsSaveRequestDto {
         this.title = title;
         this.artist = artist;
         this.link = link;
-        //this.type = type;
+        this.type = type;
     }
     public Songs toEntity() {
         return Songs.builder()
                 .title(title)
                 .artist(artist)
                 .link(link)
-                //.type(type)
+                .type(type)
                 .build();
     }
 }

@@ -14,7 +14,7 @@ public class SongsMainResponseDto {
     private String title;
     private String artist;
     private String link;
-   // private SongType type;
+    private SongType type;
     private int views;
     private String modifiedDate;
 
@@ -23,7 +23,7 @@ public class SongsMainResponseDto {
         title = entity.getTitle();
         artist = entity.getArtist();
         link = entity.getLink();
-       // type = entity.getType();
+        type = entity.getType();
         views = entity.getViews();
         modifiedDate = toStringDateTime(entity.getModifiedDate());
     }

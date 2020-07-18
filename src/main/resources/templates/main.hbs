@@ -11,7 +11,7 @@
 <body>
 <h1>무료 노래방 앱 서버 관리</h1>
 <div class="col-md-12">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">글 등록</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#savePostsModal">노래 등록</button>
     <br/>
     <br/>
     <!-- 목록 출력 영역 -->
@@ -21,6 +21,7 @@
             <th>게시번호</th>
             <th>제목</th>
             <th>아티스트</th>
+            <th>분류</th>
             <th>조회수</th>
             <th>썸네일</th>
             <th>재생</th>
@@ -33,6 +34,7 @@
                 <td>{{id}}</td>
                 <td>{{title}}</td>
                 <td>{{artist}}</td>
+                <td>{{type}}</td>
                 <td>{{views}}</td>
                 <td>https://img.youtube.com/vi/{{link}}/1.jpg</td>
                 <td><a href="https://youtu.be/" + {{link}}>https://youtu.be/{{link}}</a></td>
@@ -64,8 +66,19 @@
                         <input type="text" class="form-control" id="artist" placeholder="아티스트를 입력하세요">
                     </div>
                     <div class="form-group">
+                        <label for="type"> 분류 </label>
+                        <select name = "분류" type="text" class="form-control" id="type">
+                            size=5
+                            <option value="ETC">ETC</option>
+                            <option value="BALLADES">BALLADES</option>
+                            <option value="HIPHOP">HIPHOP</option>
+                            <option value="POP">POP</option>
+                            <option value="TROT">TROT</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="link"> 링크 </label>
-                        <textarea class="form-control" id="link" placeholder="내용을 입력하세요"></textarea>
+                        <input type="text" class="form-control" id="link" placeholder="링크를 입력하세요">
                     </div>
                 </form>
             </div>
