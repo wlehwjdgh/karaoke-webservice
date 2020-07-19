@@ -28,7 +28,7 @@ public class SongsRepositoryTest {
     }
 
     @Test
-    public void 게시글저장_불러오기() {
+    public void 노래저장_불러오기() {
         //given
         songsRepository.save(Songs.builder()
                 .title("METEOR")
