@@ -1,7 +1,7 @@
 package com.kjh.webservice.dto.songs;
 
 import com.kjh.webservice.SongType;
-import com.kjh.webservice.domain.musics.Songs;
+import com.kjh.webservice.domain.songs.Songs;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

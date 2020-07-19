@@ -1,6 +1,6 @@
 package com.kjh.webservice.service;
 
-import com.kjh.webservice.domain.musics.SongsRepository;
+import com.kjh.webservice.domain.songs.SongsRepository;
 import com.kjh.webservice.dto.songs.SongsMainResponseDto;
 import com.kjh.webservice.dto.songs.SongsSaveRequestDto;
 import lombok.AllArgsConstructor;
