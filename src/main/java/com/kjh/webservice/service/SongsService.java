@@ -17,6 +17,9 @@ public class SongsService {
 
     @Transactional
     public Long save(SongsSaveRequestDto dto) {
+        System.out.println("-------------------------------");
+        System.out.println(dto.getArtist());
+        System.out.println("-------------------------------");
         return songsRepository.save(dto.toEntity()).getId();
     }
 
