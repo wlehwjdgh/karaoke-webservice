@@ -17,7 +17,6 @@ public class SongsService {
 
     @Transactional
     public Long save(SongsSaveRequestDto dto) {
-        System.out.println(dto.getType());
         return songsRepository.save(dto.toEntity()).getId();
     }
 
@@ -27,5 +26,4 @@ public class SongsService {
                 .map(SongsMainResponseDto::new)
                 .collect(Collectors.toList());
     }
-
 }
