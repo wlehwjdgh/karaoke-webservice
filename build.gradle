@@ -33,7 +33,7 @@ dependencies {
 	}
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
-
+	compile("org.mariadb.jdbc:mariadb-java-client")
 }
 
 test {

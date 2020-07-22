@@ -1,11 +1,13 @@
-server:
-  port: 1234
-
 spring:
   profiles:
     active: local # 기본 환경 선택
-# local 환경
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 ---
+server:
+  port: 1234
 spring:
   profiles: local
   datasource:
@@ -16,4 +18,19 @@ spring:
       #ddl-auto: create-drop
   h2:
     console:
-      enabled: true
+      enabled: true# 운영 환경
+
+# 운영 환경
+---
+spring.profiles: set1
+spring.profiles.include: real-db
+
+server:
+  port: 8081
+
+---
+spring.profiles: set2
+spring.profiles.include: real-db
+
+server:
+  port: 8082
