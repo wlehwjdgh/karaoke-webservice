@@ -32,6 +32,7 @@ public class Songs extends BaseTimeEntity {
     @Column(nullable = false)
     private String link;
 
+    @Column(nullable = false)
     private int views;
 
 

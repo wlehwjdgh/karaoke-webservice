@@ -3,12 +3,18 @@ package com.kjh.webservice.web;
 import com.kjh.webservice.dto.songs.SongsSaveRequestDto;
 import com.kjh.webservice.service.SongsService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
 
 @RestController
 @AllArgsConstructor
 public class WebRestController {
     private SongsService songsService;
+    
+    private Environment env;
 
     @GetMapping("/hello")
     public String Hello() {
@@ -28,5 +34,12 @@ public class WebRestController {
         System.out.println(dto.getArtist());
         System.out.println("-------------------------------");
         return this.songsService.save(dto);
+    }
+
+    @GetMapping("/profile")
+    public String getProfile () {
+        return Arrays.stream(env.getActiveProfiles())
+                .findFirst()
+                .orElse("");
     }
 }
