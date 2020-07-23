@@ -29,10 +29,6 @@ public class WebRestController {
     //@RequestBody 와 @RequestParam 차이점은...?
     @PostMapping("/songs")
     public Long saveSongs(@RequestBody SongsSaveRequestDto dto) {
-
-        System.out.println("-------------------------------");
-        System.out.println(dto.getArtist());
-        System.out.println("-------------------------------");
         return this.songsService.save(dto);
     }
 
