@@ -14,7 +14,8 @@ import javax.persistence.*;
 @Entity
 public class Songs extends BaseTimeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     @Column(length = 500, nullable = false)

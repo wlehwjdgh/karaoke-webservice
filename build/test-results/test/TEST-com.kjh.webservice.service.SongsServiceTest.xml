@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kjh.webservice.service.SongsServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-23T05:55:57" hostname="DESKTOP-DHKETCV" time="0.033">
+  <properties/>
+  <testcase name="Dto데이터가_songs테이블에_저장된다" classname="com.kjh.webservice.service.SongsServiceTest" time="0.033"/>
+  <system-out><![CDATA[-------------------------------
+창모
+-------------------------------
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into songs (created_date, modified_date, artist, link, title, type, views, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select songs0_.id as id1_0_, songs0_.created_date as created_2_0_, songs0_.modified_date as modified3_0_, songs0_.artist as artist4_0_, songs0_.link as link5_0_, songs0_.title as title6_0_, songs0_.type as type7_0_, songs0_.views as views8_0_ from songs songs0_
+Hibernate: select songs0_.id as id1_0_, songs0_.created_date as created_2_0_, songs0_.modified_date as modified3_0_, songs0_.artist as artist4_0_, songs0_.link as link5_0_, songs0_.title as title6_0_, songs0_.type as type7_0_, songs0_.views as views8_0_ from songs songs0_
+Hibernate: delete from songs where id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
