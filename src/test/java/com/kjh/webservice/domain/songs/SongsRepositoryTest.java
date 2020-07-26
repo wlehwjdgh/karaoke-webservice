@@ -34,7 +34,7 @@ public class SongsRepositoryTest {
                 .title("METEOR")
                 .artist("창모")
                 .link("acCzZd6DAD4")
-                .type(SongType.HIPHOP)
+                .type("hiphop")
                 .build());
         //when
         List<Songs> songsList = songsRepository.findAll();
@@ -43,7 +43,7 @@ public class SongsRepositoryTest {
         Songs songs = songsList.get(0);
         assert(songs.getTitle().equals("METEOR"));
         assert(songs.getArtist().equals("창모"));
-        assert(songs.getType().equals(SongType.HIPHOP));
+        assert(songs.getType().equals("hiphop"));
         assert(songs.getLink().equals("acCzZd6DAD4"));
     }
 
@@ -54,7 +54,7 @@ public class SongsRepositoryTest {
         songsRepository.save(Songs.builder()
                 .title("METEOR")
                 .artist("창모")
-                .type(SongType.HIPHOP)
+                .type("hiphop")
                 .link("acCzZd6DAD4")
                 .build());
 

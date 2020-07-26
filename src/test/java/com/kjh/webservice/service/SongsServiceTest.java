@@ -32,7 +32,7 @@ public class SongsServiceTest {
         SongsSaveRequestDto dto = SongsSaveRequestDto.builder()
                 .title("METEOR")
                 .artist("창모")
-                .type(SongType.HIPHOP)
+                .type("hiphop")
                 .link("acCzZd6DAD4")
                 .build();
 
