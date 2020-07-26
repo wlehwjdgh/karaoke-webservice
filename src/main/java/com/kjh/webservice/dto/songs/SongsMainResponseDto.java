@@ -14,7 +14,7 @@ public class SongsMainResponseDto {
     private String title;
     private String artist;
     private String link;
-    private SongType type;
+    private String type;
     private int views;
     private String modifiedDate;
 

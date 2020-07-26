@@ -1,5 +1,6 @@
 package com.kjh.webservice.service;
 
+import com.kjh.webservice.SongType;
 import com.kjh.webservice.domain.songs.SongsRepository;
 import com.kjh.webservice.dto.songs.SongsMainResponseDto;
 import com.kjh.webservice.dto.songs.SongsSaveRequestDto;
@@ -17,15 +18,19 @@ public class SongsService {
 
     @Transactional
     public Long save(SongsSaveRequestDto dto) {
-        System.out.println("-------------------------------");
-        System.out.println(dto.getArtist());
-        System.out.println("-------------------------------");
         return songsRepository.save(dto.toEntity()).getId();
     }
 
     @Transactional(readOnly = true)
     public List<SongsMainResponseDto> findAllDesc() {
         return songsRepository.findAllDesc()
+                .map(SongsMainResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<SongsMainResponseDto> findByTypeDesc(String type) {
+        return songsRepository.findByType(type)
                 .map(SongsMainResponseDto::new)
                 .collect(Collectors.toList());
     }

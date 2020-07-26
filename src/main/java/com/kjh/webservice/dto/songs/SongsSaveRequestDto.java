@@ -15,11 +15,11 @@ public class SongsSaveRequestDto {
     private String title;
     private String artist;
     private String link;
-    private SongType type;
+    private String type;
     private int views;
 
     @Builder
-    public SongsSaveRequestDto(String title, String artist, String link, SongType type) {
+    public SongsSaveRequestDto(String title, String artist, String link, String type) {
         this.title = title;
         this.artist = artist;
         this.link = link;
