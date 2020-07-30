@@ -30,9 +30,6 @@ public class WebRestController {
     */
     @PostMapping("/add")
     public Long saveSongs(@RequestBody SongsSaveRequestDto dto) {
-        System.out.println("-------------------------");
-        System.out.println(dto.toString());
-        System.out.println("-------------------------");
         return this.songsService.save(dto);
     }
 
@@ -42,5 +39,4 @@ public class WebRestController {
                 .findFirst()
                 .orElse("");
     }
-
 }
