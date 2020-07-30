@@ -39,5 +39,5 @@ deploy:
     wait-until-deployed: true
     local_dir: deploy
     on:
-      repo: jojoldu/springboot-webservice #Github 주소
+      repo: wlehwjdgh/karaoke-webservice #Github 주소
       branch: master
