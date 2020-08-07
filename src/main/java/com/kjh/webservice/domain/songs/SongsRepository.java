@@ -25,4 +25,19 @@ public interface SongsRepository extends JpaRepository<Songs, Long> {
             "WHERE p.type = :type " +
             "ORDER BY p.views DESC")
     Stream<Songs> findByType(@Param("type") String type);
+
+    @Query("SELECT DISTINCT p " +
+            "FROM Songs p " +
+            "WHERE p.title LIKE :title% " +
+            "ORDER BY p.views DESC")
+    Stream<Songs> findByTitle(@Param("title") String title);
+
+    @Query("SELECT DISTINCT p " +
+            "FROM Songs p " +
+            "WHERE p.artist LIKE :artist% " +
+            "ORDER BY p.views DESC")
+    Stream<Songs> findByArtist(@Param("artist") String artist);
+
+
+
 }

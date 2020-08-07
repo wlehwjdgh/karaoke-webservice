@@ -29,6 +29,20 @@ public class SongsService {
     }
 
     @Transactional(readOnly = true)
+    public List<SongsMainResponseDto> findByTitle(String title) {
+        return songsRepository.findByTitle(title)
+                .map(SongsMainResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public List<SongsMainResponseDto> findByArtist(String artist) {
+        return songsRepository.findByArtist(artist)
+                .map(SongsMainResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
     public List<SongsMainResponseDto> findByTypeDesc(String type) {
         return songsRepository.findByType(type)
                 .map(SongsMainResponseDto::new)
