@@ -34,12 +34,17 @@ public class Songs extends BaseTimeEntity {
     @Column(nullable = false)
     private int views;
 
-
     @Builder
     public Songs(String title, String artist, String link, String type) {
         this.title = title;
         this.artist = artist;
         this.type = type;
         this.link = link;
+    }
+
+    public void increaseView() {
+        if (this.views < Long.MAX_VALUE) {
+            this.views++;
+        }
     }
 }

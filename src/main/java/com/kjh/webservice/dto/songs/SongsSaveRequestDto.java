@@ -25,6 +25,7 @@ public class SongsSaveRequestDto {
         this.link = link;
         this.type = type;
     }
+
     public Songs toEntity() {
         return Songs.builder()
                 .title(title)

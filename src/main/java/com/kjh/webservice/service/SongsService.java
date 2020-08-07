@@ -1,6 +1,6 @@
 package com.kjh.webservice.service;
 
-import com.kjh.webservice.SongType;
+import com.kjh.webservice.domain.songs.Songs;
 import com.kjh.webservice.domain.songs.SongsRepository;
 import com.kjh.webservice.dto.songs.SongsMainResponseDto;
 import com.kjh.webservice.dto.songs.SongsSaveRequestDto;
@@ -19,6 +19,16 @@ public class SongsService {
     @Transactional
     public Long save(SongsSaveRequestDto dto) {
         return songsRepository.save(dto.toEntity()).getId();
+    }
+
+    @Transactional
+    public Long update(Long id) {
+        Songs song = songsRepository.getOne(id);
+        if (song != null) {
+            song.increaseView();
+            return songsRepository.save(song).getId();
+        }
+        return 0L;
     }
 
     @Transactional(readOnly = true)

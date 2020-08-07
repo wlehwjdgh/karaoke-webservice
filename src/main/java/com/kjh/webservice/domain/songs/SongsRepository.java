@@ -14,12 +14,6 @@ public interface SongsRepository extends JpaRepository<Songs, Long> {
             "ORDER BY p.views DESC")
     Stream<Songs> findAllDesc();
 
-@Query("SELECT p " +
-        "FROM Songs p " +
-        "WHERE type = '0'" +
-        "ORDER BY p.views DESC")
-    Stream<Songs> findHiphopDesc();
-
     @Query("SELECT p " +
             "FROM Songs p " +
             "WHERE p.type = :type " +
@@ -37,7 +31,4 @@ public interface SongsRepository extends JpaRepository<Songs, Long> {
             "WHERE p.artist LIKE :artist% " +
             "ORDER BY p.views DESC")
     Stream<Songs> findByArtist(@Param("artist") String artist);
-
-
-
 }
