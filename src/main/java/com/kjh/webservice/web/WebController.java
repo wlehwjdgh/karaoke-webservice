@@ -30,24 +30,4 @@ public class WebController {
         model.addAttribute("songs", songsService.findByTypeDesc(songType));
         return "main";
     }
-
-    @GetMapping("/songs")
-    public @ResponseBody
-    List<SongsMainResponseDto> getAllSongs(Model model, Songs song) {
-        if (song.getTitle() != null) {
-            return songsService.findByTitle(song.getTitle());
-        } else if (song.getArtist() != null) {
-            return songsService.findByArtist(song.getArtist());
-        } else if (song.getType() != null) {
-            return songsService.findByTypeDesc(song.getType());
-        }
-        return songsService.findAllDesc();
-    }
-
-    @GetMapping("/songs/{songType}")
-    public @ResponseBody
-    List<SongsMainResponseDto> getSongsByType(Model model, @PathVariable("songType") String songType) {
-        return songsService.findByTypeDesc(songType);
-    }
-
 }

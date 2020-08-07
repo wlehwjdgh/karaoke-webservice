@@ -1,6 +1,8 @@
 package com.kjh.webservice.web;
 
 import com.kjh.webservice.SongType;
+import com.kjh.webservice.domain.songs.Songs;
+import com.kjh.webservice.dto.songs.SongsMainResponseDto;
 import com.kjh.webservice.dto.songs.SongsSaveRequestDto;
 import com.kjh.webservice.service.SongsService;
 import lombok.AllArgsConstructor;
@@ -10,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -33,9 +36,28 @@ public class WebRestController {
         return this.songsService.save(dto);
     }
 
+    @GetMapping("/songs")
+    public @ResponseBody
+    List<SongsMainResponseDto> getAllSongs(Model model, Songs song) {
+        if (song.getTitle() != null) {
+            return songsService.findByTitle(song.getTitle());
+        } else if (song.getArtist() != null) {
+            return songsService.findByArtist(song.getArtist());
+        } else if (song.getType() != null) {
+            return songsService.findByTypeDesc(song.getType());
+        }
+        return songsService.findAllDesc();
+    }
+
     @PostMapping("/songs/{songId}/update")
     public Long processUpdateSongForm(@PathVariable("songId") Long songId) {
         return this.songsService.update(songId);
+    }
+
+    @GetMapping("/songs/{songType}")
+    public @ResponseBody
+    List<SongsMainResponseDto> getSongsByType(Model model, @PathVariable("songType") String songType) {
+        return songsService.findByTypeDesc(songType);
     }
 
     @GetMapping("/profile")
